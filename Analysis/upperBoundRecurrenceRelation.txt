@@ -1,0 +1,4 @@
+Upper Bounds using Tree Method
+
+T(n) = T(n/4) + T(n/2) + Cn
+T(1) = C

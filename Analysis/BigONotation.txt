@@ -1,0 +1,29 @@
+Big O Notation:
+    Direct Way how to find Big O.
+        - Ignore lower order terms
+        - Ignore Leading term constant
+
+3n^2 + 5n + 6       - O(n^2)
+3n + 10nlogn + 3     - O(nlogn)
+10n^3 + 40n + 10    - O(n^3) 
+
+Whenever we talk about Asymptotic Notation we talk about large number of n values or value.
+
+Defination: f(n) = O(g(n)) iff there exist constants c and n.
+            such that f(n) <= c * g(n) for all n >= n0. 
+
+Example:
+    f(n) = 2n + 3
+    can be written as O(n) [g(n) = n]
+    Let's take c = 3        // trick to find c is coffe. of highest growing term and add 1 so 2+1
+    2n + 3 <= 3n
+    3 <= n
+    we get n0 = 3
+
+Big O Notation works for Multiple Variables also:
+    100n^2 + 1000m + n : O(n^2 + m)
+    1000m^2 200mn + 30m + 20n : O(m^2 + mn)
+
+
+Applications:
+    Used when we have an upper bound.

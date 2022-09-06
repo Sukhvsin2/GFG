@@ -1,0 +1,35 @@
+Asymptotic Analysis:
+    1. Measure the order of growth.
+    2. Doesn't depend on the language.
+    3. Could be analyze before implementing.
+
+int getSum(int arr[], int n){
+    int sum = 0;    // constant
+    for(int i=0;i<n;i++){       // n times
+        sum += arr[i];          // constant
+    }
+    return sum;    // constant
+}
+
+Time Taken: cn + c
+Order of the Growth: n  // we ingnore the constant for the order of growth
+
+int getSum(int arr[], int n){
+    if(n%2 == 0)
+        return 0;
+    int sum = 0;
+    for(int i=0;i<n;i++){
+        sum += arr[i];
+    }
+    return sum;
+}
+
+Best Case: when n is even so it would take constant time - c
+Average Case: Linear
+Worst Case: Linear
+
+
+Asymptotic Notations:
+   (Average) Big O: Upper
+   (Worst) Theta: Exact
+   (Best) Omega: Lower

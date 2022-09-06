@@ -1,0 +1,109 @@
+# Space Complexity
+
+Order of Growth of Memory Space or Ram Space in terms of input Size.
+
+Example Program:
+int getSum(int n){
+    return n*(n+1)/2
+}
+
+How much Space taken - constant O(1)
+
+int getSum2(int n){
+    int sum = 0;
+    for(int i=0;i<n;i++)
+        sum = sum + i
+    return sum;
+}
+
+Space Taken - Depends on How many variables do we need
+            - in this case we need
+                - Sum, i and n
+            - So space of this algorithm would be same O(1)
+
+# we use the same representation for space complexity as we use for the time complexity.
+
+
+What would be the space complexity of this program?
+
+int arrSum(int arr[], int n){
+    int sum = 0;
+
+    for(int i=0;i<n;i++){
+        sum = sum + arr[i];
+    }
+
+    return sum;
+}
+
+Answer: Space Comlpexity - O(n) 
+
+
+## Auxilary Space   
+    - It is the Extra space or temporary space which is created in a program to 
+    solve any problem or in any algorithm.
+    - It is used most of the time to calculate space complexity of any algorithm.
+
+Example Program: 
+
+int arrSum(int arr[], int n){
+    int sum = 0;
+
+    for(int i=0;i<n;i++){
+        sum = sum + arr[i];
+    }
+
+    return sum;
+}
+
+If we talk about Space complexity for this problem which is O(n)
+but for Auxilary Space which is temporary or extra space and which would be the 
+sum variable so the Auxilary space would O(1) for this problem.
+
+For the problems in which we deal with array or any kind of list and if it uses any extra
+array to solve the problem the space complexity would be atleast theta N. So, rather than
+comparing space complexity in those algorithms we compare auxilary space.
+For example - Sorting algorithms
+All the sorting algorithms use atleast N space complexity so, we compare it with the 
+auxilary space 
+for example - Merge Sort: O(n) Auxilary Space
+            - Quick Sort: logn Auxilary Space in the best case because it has recursion 
+
+# Auxilary Space provides more information than comparing with the Space Complexity.
+
+int fun(int n){
+    if(n <= 0)
+        return 0;
+
+    return n + fun(n-1);
+}
+
+call function: fun(5)
+
+Stack   Stack   Stack   Stack   Stack   Stack
+fun(5)  fun(4)  fun(3)  fun(2)  fun(1)  fun(0)  return 0
+        fun(5)  fun(4)  fun(3)  fun(2)  fun(1)  return 0 + 1
+                fun(5)  fun(4)  fun(3)  fun(2)  return 1 + 2
+                        fun(5)  fun(4)  fun(3)  return 3 + 3
+                                fun(5)  fun(4)  return 6 + 4
+                                        fun(5)  return 10 + 5
+
+                                        final Result: 15
+Auxilary Space : O(n+1)
+                - It would need 6 calls that's why it needs N+1 space.(Worst Case)
+
+
+Exercise Question :
+
+int fib(int n){
+    if(n == 0 || n == 1)
+        return n;
+    
+    return fib(n-1) + fib(n-2);
+}
+
+function call: fib(5)
+
+Auxilary Space: O(n)
+                - It would be always the height of the tree.
+                - which is 5 in this case.

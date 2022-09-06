@@ -1,0 +1,95 @@
+Solving recurrence relations with Recursion Tree Method.
+
+T(n) = 2T(n/2) + cn
+T(1) = c
+
+        Cn
+T(n/2)       T(n/2)
+
+            Cn
+    Cn/2            Cn/2
+T(n/4)  T(n/4)  T(n/4)  T(n/4)
+
+        ....
+        .... So on.
+
+1. We consider the recursion tree and compute total work done.
+2. Write non-recursive part of tree as the root and recursive part as children.
+3. Keep Expanding untill we see a pattern. 
+
+Examples: 
+Q. Find the value to Tn using recursion tree method.
+    T(n) = 2T(n-1) + C
+    T(1) = C
+
+Answer:
+        C                   
+T(n-1)      T(n-1)
+
+                C                   C
+        C               C           2C
+  T(n-2)  T(n-2)  T(n-2)  T(n-2)    .. so on.
+
+  .... so on.
+
+  we can see the pattern now C + 2C + 4C + ..... + nC
+  Formula for gemetric series is = C(1 + 2 + 3 + ..... + n)
+                                 = C * (1 x (2^n - 1))/2-1
+                                 = θ(2^n)
+
+This recurrence is found in Tower of Hanoi Problem.
+
+Example 2:
+Q. Find the value to Tn using recursion tree method.
+    T(n) = T(n/2) + C
+    T(1) = C
+
+Answer:   Wrong Answer
+        C
+T(n/2)      T(n/2)
+
+
+                C                   C
+        C               C           2C
+  T(n/4)  T(n/4)  T(n/4)  T(n/4)    .. so on.
+
+Right Answer : (My Assumption) The coffiecient in the equation decides the calls
+                                example 2T(n/2) means 2 calls.
+    C
+    T(n/2)
+
+    C
+    C
+    T(n/4)
+    ... etc
+
+    The pattern is now C + C + C + ...... + C.
+                      = Log_2 n + 1
+           Complexity = θ(log_2n) 
+
+Example 3:
+Q. Find the value to Tn using recursion tree method.
+    T(n) = 2T(n/2) + C
+    T(1) = C
+        C                   
+T(n/2)      T(n/2)
+
+                C                   C
+        C               C           2C
+  T(n/4)  T(n/4)  T(n/4)  T(n/4)    .. so on.
+
+  .... so on.
+
+  Pattern is : C + 2C + 4C + .... + nC
+
+  How many term are going to be in series? : (log_2n) + 1 -> log_2n
+  So Sum of the series = (1 x (2^log_2n - 1))/2-1
+            Complexity = θ(2^log_2n)    2 and log_2 cancel out leaving n behind
+            Complexity = θ(n)
+
+
+------------------------------------------------
+Backup Substituion
+
+
+

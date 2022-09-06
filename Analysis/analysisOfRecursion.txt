@@ -1,0 +1,45 @@
+Analysis of Recursion:
+    void fun(n){
+        if(n <= 0) return;
+        print(n + " ");
+        fun(n/2);
+        fun(n/2);
+    }
+
+How write recurence relation?
+
+n > 0
+T(n) = T(n/2) + T(n/2) + O(1) // O(1) is for some constant time statements
+
+n <= 0
+T(n) = T(1)
+
+Example Function:
+    void fun(n){
+        if(n<=0) return;
+
+        for(i=0;i<n;i++) print(n);
+
+        fun(n/2);
+        fun(n/3);
+    }
+
+recurence relation:
+n > 0
+T(n) = T(n/2) + T(n/3) + O(n) + O(1)
+
+n <= 0
+T(n) = T(1)
+
+Example Function:
+    void fun(n){
+        if(n<=1) return;
+        print(n + " ");
+        fun(n-1);
+    }
+recurence relation:
+n > 0
+T(n) = T(n-1) + O(1)
+
+n < 1
+T(n) = T(1)

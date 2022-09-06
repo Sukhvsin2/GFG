@@ -1,0 +1,4 @@
+Omega Notation:
+    f(n) = Ω(g(n)) iff there exist constants c (where c > 0) and n0 (where n0 >= 0) such
+    that c*g(n) <= f(n) for all n >= n0.
+    

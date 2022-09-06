@@ -1,0 +1,73 @@
+## Every complexity is in theta form
+
+// Simple Loops: Add each complexity
+
+void func(n){
+    // O(n)
+    for(i=0;i<n;i++){
+        // some code
+    }
+
+    // O(logn)
+    for(i=1;i<n;i*2){
+        // some code
+    }
+    // O(1)
+    for(i=1;i<100;i++){
+        // some code
+    }
+}
+
+overall Time complexity is : O(n)
+
+----------------------------------------------
+// Nested Loops : Multiply each complexity
+
+void fun(n){
+    for(i=0;i<n;i++){   // n
+        for(j=1;j<n;j*2){   // logn
+            // some code here 
+        }
+    }
+}
+
+overall Time complexity is : nlogn
+
+
+----------------------------------------------
+//Mixed Loops
+void fun(n){
+    for(i=0;i<n;i++){   // n
+        for(j=1;j<i;j*2){   // logn
+            // some code here 
+        }
+    }
+
+    for(i=0;i<n;i++){   // n
+        for(j=1;j<n;j++){   // n
+            // some code here 
+        }
+    }
+}
+
+overall Time complexity is : nlogn + n^2
+considering the biggest form : so complexity will be n^2
+
+-----------------------------------------------------------
+// Diffrent Inputs
+void fun(n, m){
+    for(i=0;i<n;i++){   // n
+        for(j=1;j<i;j*2){   // logn
+            // some code here 
+        }
+    }
+
+    for(i=0;i<m;i++){   // n
+        for(j=1;j<m;j++){   // n
+            // some code here 
+        }
+    }
+}
+
+overall Time complexity is : nlogn + m^2 --> Can't mixup 2 variables while making analysis of 
+algo.
