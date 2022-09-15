@@ -13,29 +13,31 @@
 
 using namespace std;
 
-// void oddOccuringNumber(int *arr, int size){
-//     map<int, int> res;
-//     for(int i=0; i<size; i++){
-//         if(res.find(arr[i]) != res.end())
-//             res[arr[i]]++;
-//         else
-//             res.insert({arr[i], 1});
-//     }
-//     for(int i=0;i<size;i++)
-//         if(arr[i] & 1) cout<<arr[i]<<" ";
-//     cout<<endl;
-// }
-
-void oddOccuringNumber(int arr[], int size){
-    int res = 0;
-    // a^b will XOR both numbers leaving a odd number behind
-    // which will not cancel with pair of itself
-    // all the even occuring number will cancel with eachother
-    for(int i = 0; i<size; i++)
-        res = res ^ arr[i];
-
-    cout<<"Odd Occuring number is :"<<res<<endl;
+void oddOccuringNumber(int *arr, int size){
+    map<int, int> res;
+    for(int i=0; i<size; i++){
+        if(res.find(arr[i]) != res.end())
+            res[arr[i]]++;
+        else{
+            int temp = arr[i];
+            res.insert(std::pair<int, int>(arr[i], 1));
+        }
+    }
+    for(int i=0;i<size;i++)
+        if(arr[i] & 1) cout<<arr[i]<<" ";
+    cout<<endl;
 }
+
+// void oddOccuringNumber(int arr[], int size){
+//     int res = 0;
+//     // a^b will XOR both numbers leaving a odd number behind
+//     // which will not cancel with pair of itself
+//     // all the even occuring number will cancel with eachother
+//     for(int i = 0; i<size; i++)
+//         res = res ^ arr[i];
+
+//     cout<<"Odd Occuring number is :"<<res<<endl;
+// }
 
 int main(){
     int arr[] = {4, 3, 4, 4, 4, 5, 5};
