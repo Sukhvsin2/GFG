@@ -1,0 +1,9 @@
+# Application of Recursion
+Any problem can be coded in Recursion form if it can program in iterative form and vise-versa,
+they both have same expressive power.
+
+# when and where to use Recursion?
+Many Startdard algorithms like
+    - Dynamic Programming
+    - Backtracking
+    - Divide and concure 
